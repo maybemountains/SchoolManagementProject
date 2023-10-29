@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 import datamodel.Students;
 
-public class PayService {
+public class StudentService {
 
 	public List<Students> read() throws IOException {
 		String line = null;
@@ -55,7 +55,7 @@ public class PayService {
 	}
 	
 	// write a function that will sort the output according to the age/year and display it in the console
-    public static void sortStudents(List<Students> students) {
+    public void sortStudents(List<Students> students) {
     	
         // Define a custom comparator to sort students by age
         Comparator<Students> ageYearComparator = Comparator.comparing(Students::getAge);
@@ -68,10 +68,4 @@ public class PayService {
         	System.out.println(student);
         }
     }
-	
-	 public static void main(String[] args) throws IOException {
-		 PayService test = new PayService();
-//		 System.out.print(test.read());
-		 sortStudents(test.read());
-	 }
 }
