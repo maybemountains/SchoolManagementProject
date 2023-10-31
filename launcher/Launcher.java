@@ -10,6 +10,7 @@ import datamodel.Admin;
 import datamodel.Courses;
 import datamodel.Enrollment;
 import datamodel.Students;
+import service.InstructorService;
 import service.StudentService;
 
 public class Launcher {
@@ -48,9 +49,13 @@ public class Launcher {
 //		student.setCourse(courses);
 //		courses.forEach(c -> System.out.println(c));
 		
-		 StudentService test = new StudentService();
+//		 StudentService test = new StudentService();
 //		 System.out.print(test.read());
-		 test.sortStudents(test.read());
+//		 test.sortStudents(test.read());
+		
+		 InstructorService tester = new InstructorService();
+		 System.out.print(tester.readCSV());
+
 		
 		
 	}

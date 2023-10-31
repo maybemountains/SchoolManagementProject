@@ -26,21 +26,28 @@ public class InstructorService {
 				Instructors instructor = new Instructors();
 				String[] instructors = line.split(splitBy);
 				String sub = instructors[2].trim();
+				String targetYear = instructors[5].trim();
 				
 				instructor.setInstructorID(instructors[0].trim());
 				instructor.setName(instructors[1].trim());
 				instructor.setSubject(sub);
+				
 				if (sub.equals("C++")) {
 					instructor.setSubject("JavaScript");
 				}
 				
 				instructor.setPhoneNumber(new BigInteger(instructors[3].trim()));
 				instructor.setEmail(instructors[4].trim());
-				instructor.setTargetYear(instructors[5].trim());
+				
+				instructor.setTargetYear(targetYear);
 				
 				// make smth for the target year, if the subject is python and the year is fall 2022
 				// python becomes c++ and the year becomes 2022 or 2023
-				
+				if(sub.equals("Python") && targetYear.equals("Fall 2022")) {
+					instructor.setSubject("C++");
+					instructor.setTargetYear("Fall 2023");
+				}
+	
 				instructorList.add(instructor);
 			}
 			count++;
@@ -50,5 +57,7 @@ public class InstructorService {
 		return instructorList;
 		
 	}
+	
+	
 	
 }
