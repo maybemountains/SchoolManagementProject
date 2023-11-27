@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import database.StudentsDatabase;
 import datamodel.Admin;
 import datamodel.Courses;
 import datamodel.Enrollment;
@@ -53,8 +54,11 @@ public class Launcher {
 //		 System.out.print(test.read());
 //		 test.sortStudents(test.read());
 		
-		 InstructorService tester = new InstructorService();
-		 System.out.print(tester.readCSV());
+//		 InstructorService tester = new InstructorService();
+//		 System.out.print(tester.readCSV());
+		
+		StudentsDatabase sdb = new StudentsDatabase();
+		sdb.databaseConnectivity();
 
 		
 		
